@@ -8,9 +8,9 @@
   "license": "MIT",
   "devDependencies": {
     "clean-deep": "^2.0.1",
+    "lodash": "^4.17.4",
     "npm-user": "^2.1.0",
-    "owners": "^1.0.0",
-    "require-dir": "^0.3.1"
+    "owners": "^1.2.0"
   },
   "scripts": {
     "build": "node scripts/build.js"

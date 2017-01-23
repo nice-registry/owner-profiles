@@ -1,0 +1,6 @@
+{
+  "name": "First Last",
+  "email": "amphtml-validator@google.com",
+  "homepage": "https://www.ampproject.org/docs/guides/validate.html",
+  "github": "ampproject/amphtml/tree/master/validator/nodejs"
+}
