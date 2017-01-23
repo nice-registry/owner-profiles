@@ -1,0 +1,18 @@
+{
+  "name": "owner-profiles",
+  "version": "1.0.0",
+  "description": "Profile data for every npm author: name, email, GitHub handle, etc.",
+  "main": "index.js",
+  "repository": "https://github.com/nice-registry/owner-profiles",
+  "author": "zeke <zeke@sikelianos.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-deep": "^2.0.1",
+    "npm-user": "^2.1.0",
+    "owners": "^1.0.0",
+    "require-dir": "^0.3.1"
+  },
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
