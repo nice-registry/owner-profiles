@@ -1,0 +1,8 @@
+{
+  "username": "aws",
+  "email": "aws-sdk-js@amazon.com",
+  "name": "Amazon Web Services",
+  "homepage": "http://aws.amazon.com/javascript/",
+  "github": "aws/aws-sdk-js",
+  "twitter": "awscloud"
+}
