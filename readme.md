@@ -11,7 +11,7 @@ npm install owner-profiles --save
 ## Usage
 
 ```js
-const profiles = require('.')
+const profiles = require('owner-profiles')
 
 profiles.find('zeke')
 // {
