@@ -1,10 +1,9 @@
-2018/02/11-19:27:48.537282 7f20fdffd700 Recovering log #48
-2018/02/11-19:27:48.539968 7f20fdffd700 Delete type=3 #47
-2018/02/11-19:27:48.540007 7f20fdffd700 Delete type=0 #48
-2018/02/11-19:30:24.734902 7f20ebfff700 Compacting 2@0 + 1@1 files
-2018/02/11-19:30:24.738384 7f20ebfff700 Generated table #51@0: 52 keys, 5574 bytes
-2018/02/11-19:30:24.738401 7f20ebfff700 Compacted 2@0 + 1@1 files => 5574 bytes
-2018/02/11-19:30:24.739625 7f20ebfff700 compacted to: files[ 0 1 0 0 0 0 0 ]
-2018/02/11-19:30:24.739689 7f20ebfff700 Delete type=2 #31
-2018/02/11-19:30:24.739749 7f20ebfff700 Delete type=2 #22
-2018/02/11-19:30:24.739797 7f20ebfff700 Delete type=2 #28
+2018/02/11-22:51:18.096553 7fdba3fff700 Recovering log #54
+2018/02/11-22:51:18.099530 7fdba3fff700 Delete type=0 #54
+2018/02/11-22:51:18.099575 7fdba3fff700 Delete type=3 #52
+2018/02/11-22:53:03.013944 7fdba2ffe700 Compacting 1@0 + 1@1 files
+2018/02/11-22:53:03.021912 7fdba2ffe700 Generated table #57@0: 1346 keys, 149913 bytes
+2018/02/11-22:53:03.021930 7fdba2ffe700 Compacted 1@0 + 1@1 files => 149913 bytes
+2018/02/11-22:53:03.023751 7fdba2ffe700 compacted to: files[ 0 1 0 0 0 0 0 ]
+2018/02/11-22:53:03.023819 7fdba2ffe700 Delete type=2 #53
+2018/02/11-22:53:03.023909 7fdba2ffe700 Delete type=2 #51
