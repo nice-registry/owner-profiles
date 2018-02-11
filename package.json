@@ -9,18 +9,22 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "clean-deep": "^2.0.1",
+    "limiter": "^1.1.2",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
-    "npm-user": "^2.1.0",
-    "owners": "^1.2.0",
+    "npm-user": "^3.0.1",
+    "owners": "^1.342.0",
     "standard": "^8.6.0",
     "standard-markdown": "^2.3.0"
   },
   "scripts": {
-    "install": "npm run decompress",
-    "compress": "tar cfzv profiles.tgz profiles",
-    "decompress": "tar xfz profiles.tgz",
-    "build": "node scripts/build.js && npm run compress",
+    "xinstall": "npm run decompress",
+    "xcompress": "tar cfzv profiles.tgz profiles",
+    "xdecompress": "tar xfz profiles.tgz",
+    "build": "node scripts/build.js",
     "test": "mocha && standard && standard-markdown"
+  },
+  "dependencies": {
+    "level": "^2.1.2"
   }
 }
