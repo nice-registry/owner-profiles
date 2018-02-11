@@ -1,30 +1,28 @@
 {
   "name": "owner-profiles",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Profile data for every npm author: name, email, GitHub handle, etc.",
   "main": "index.js",
   "repository": "https://github.com/nice-registry/owner-profiles",
   "author": "zeke <zeke@sikelianos.com>",
   "license": "MIT",
   "devDependencies": {
+    "bottleneck": "^2.0.1",
     "chai": "^3.5.0",
     "clean-deep": "^2.0.1",
     "limiter": "^1.1.2",
     "lodash": "^4.17.4",
     "mocha": "^3.2.0",
     "npm-user": "^3.0.1",
-    "owners": "^1.342.0",
+    "owners": "1.342.0",
     "standard": "^8.6.0",
     "standard-markdown": "^2.3.0"
   },
   "scripts": {
-    "xinstall": "npm run decompress",
-    "xcompress": "tar cfzv profiles.tgz profiles",
-    "xdecompress": "tar xfz profiles.tgz",
-    "build": "node scripts/build.js",
+    "build": "node script/build.js",
     "test": "mocha && standard && standard-markdown"
   },
   "dependencies": {
-    "level": "^2.1.2"
+    "level": "2.1.2"
   }
 }
