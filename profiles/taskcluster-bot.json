@@ -1,7 +1,0 @@
-{
-  "username": "taskcluster-bot",
-  "email": "taskcluster-accounts@mozilla.com",
-  "name": "Taskcluster Robot",
-  "homepage": "https://docs.taskcluster.net/",
-  "github": "taskcluster/"
-}
