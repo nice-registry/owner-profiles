@@ -17,7 +17,6 @@ const TTL = humanInterval('7 days')
 console.log(`found ${usernames.length} usernames in 'owners' package`)
 
 async function saveProfile (username) {
-
   if (Date.now() > jobStartTime + jobDuration) {
     console.log('time is up! exiting')
     process.exit()
@@ -35,7 +34,7 @@ async function saveProfile (username) {
     if (new Date(existingProfile.updatedAt).getTime() + TTL > Date.now()) {
       console.log(`${username} (up to date; skipping)`)
       return
-    } 
+    }
   }
 
   const profile = await npmUser(username)
