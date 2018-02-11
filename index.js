@@ -1,1 +1,1 @@
-module.exports = require('level')('./db')
+module.exports = require('./lib/db')
