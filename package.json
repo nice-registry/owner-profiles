@@ -20,7 +20,8 @@
   },
   "scripts": {
     "build": "node script/build.js",
-    "test": "mocha && standard && standard-markdown"
+    "test": "mocha && standard && standard-markdown",
+    "release": "script/release.sh"
   },
   "dependencies": {
     "level": "2.1.2"
