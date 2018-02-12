@@ -25,11 +25,19 @@ describe('ownerProfiles', () => {
     expect(owner.github).to.be.a('string')
   })
 
-  // it('includes homepage', () => {
-  //   expect(owner.homepage).to.be.a('string')
-  // })
-
   it('includes name', () => {
     expect(owner.name).to.be.a('string')
+  })
+
+  it('has lots of entries', (done) => {
+    let count = 0
+    profiles.createReadStream()
+      .on('data', (data) => {
+        count++
+      })
+      .on('end', () => {
+        expect(count).to.be.above(2600)
+        done()
+      })
   })
 })
