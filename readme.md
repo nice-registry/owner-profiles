@@ -10,8 +10,8 @@ npm install owner-profiles --save
 
 ## Usage
 
-This module exports a [leveldb] database with npm username strings as keys
-and user profile objects as values.
+As of version 2, this module exports a [leveldb] database with npm username 
+strings as keys and user profile objects as values.
 
 ```js
 const profiles = require('owner-profiles')
