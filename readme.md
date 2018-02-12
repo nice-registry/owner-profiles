@@ -10,20 +10,44 @@ npm install owner-profiles --save
 
 ## Usage
 
+As of version 2, this module exports a [leveldb] database with npm username 
+strings as keys and user profile objects as values.
+
 ```js
 const profiles = require('owner-profiles')
-
-profiles.find('zeke')
-// {
-//   username: 'zeke',
-//   email: 'zeke@sikelianos.com',
-//   name: 'Zeke Sikelianos',
-//   homepage: 'http://zeke.sikelianos.com',
-//   github: 'zeke',
-//   twitter: 'zeke'
-// }
-
 ```
+
+To find a specific user:
+
+```js
+profiles.get('zeke')
+```
+
+This returns a promise, which resolves to an object like this:
+
+```js
+{
+  email: 'zeke@sikelianos.com',
+  name: 'Zeke Sikelianos',
+  homepage: 'http://zeke.sikelianos.com',
+  github: 'zeke',
+  twitter: 'zeke'
+}
+```
+
+You can also stream the entire contents of the database:
+
+```js
+db.createReadStream()
+  .on('data', ({key: username, value: profile}) => {
+    console.log(username, profile)
+  })
+  .on('error', (err) => {
+    console.error('Oh my!', err)
+  })
+```
+
+For other stuff you can do with the data, see the `level` API: [github.com/Level/level#api](https://github.com/Level/level#api)
 
 ## Tests
 
@@ -32,22 +56,8 @@ npm install
 npm test
 ```
 
-## Dependencies
-
-None
-
-## Dev Dependencies
-
-- [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
-- [clean-deep](https://github.com/seegno/clean-deep): Remove falsy, empty or nullable values from objects
-- [lodash](https://github.com/lodash/lodash): Lodash modular utilities.
-- [mocha](https://github.com/mochajs/mocha): simple, flexible, fun test framework
-- [npm-user](https://github.com/sindresorhus/npm-user): Get user info of a npm user
-- [owners](https://github.com/nice-registry/owners): Usernames and package counts for every npm package author
-- [standard](https://github.com/feross/standard): JavaScript Standard Style
-- [standard-markdown](https://github.com/zeke/standard-markdown): Test your Markdown files for Standard JavaScript Style™
-
-
 ## License
 
 MIT
+
+[leveldb]: https://ghub.io/level
