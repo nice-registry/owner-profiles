@@ -12,7 +12,7 @@ const limiter = new Bottleneck({
 })
 
 const jobStartTime = Date.now()
-const jobDuration = humanInterval('3 minutes')
+const jobDuration = humanInterval('50 minutes')
 const TTL = humanInterval('80 days')
 
 const freshProfiles = []
