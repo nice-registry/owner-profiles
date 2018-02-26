@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('make-promises-safe')
+
 const npmUser = require('npm-user')
 const usernames = require('owners').map(o => o.username)
 const db = require('../lib/db')
@@ -10,11 +12,39 @@ const limiter = new Bottleneck({
 })
 
 const jobStartTime = Date.now()
-const jobDuration = humanInterval('45 minutes')
+const jobDuration = humanInterval('3 minutes')
+const TTL = humanInterval('80 days')
 
-const TTL = humanInterval('7 days')
+const freshProfiles = []
 
-console.log(`found ${usernames.length} usernames in 'owners' package`)
+console.log(`${usernames.length} total users on npm`)
+
+db.createReadStream()
+.on('data', ({key: username, value: profile}) => {
+  if (!profile) return
+  if (!profile.updatedAt) return
+  if (new Date(profile.updatedAt).getTime() + TTL < Date.now()) return
+  freshProfiles.push(username)
+})
+.on('end', () => {
+  console.log(`${freshProfiles.length} fresh profiles`)
+  const usernamesToUpdate = usernames.filter(username => !freshProfiles.includes(username))
+  console.log(`${usernamesToUpdate.length} outdated profiles`)
+
+  usernamesToUpdate.forEach(username => {
+    limiter.schedule(saveProfile, username)
+  })
+
+  limiter
+    .on('idle', () => {
+      console.log('done')
+      process.exit()
+    })
+    .on('error', (err) => {
+      console.log('bottleneck error', err)
+      process.exit()
+    })
+})
 
 async function saveProfile (username) {
   if (Date.now() > jobStartTime + jobDuration) {
@@ -22,36 +52,13 @@ async function saveProfile (username) {
     process.exit()
   }
 
-  let existingProfile
-
   try {
-    existingProfile = await db.get(username)
-  } catch (e) {
-    // no worries
-  }
-
-  if (existingProfile && existingProfile.updatedAt) {
-    if (new Date(existingProfile.updatedAt).getTime() + TTL > Date.now()) {
-      console.log(`${username} (up to date; skipping)`)
-      return
-    }
-  }
-
-  const profile = await npmUser(username)
-  if (profile) {
-    console.log(username)
+    const profile = await npmUser(username)
     profile.updatedAt = new Date()
-    await db.put(username, profile)
-  } else {
-    console.error(`${username} (failed)`)
+    const result = await db.put(username, profile)
+    console.log(username, '(good)')
+    return result
+  } catch (err) {
+    console.error(username, '(not found on npm)')
   }
 }
-
-usernames.forEach(username => {
-  limiter.schedule(saveProfile, username)
-})
-
-limiter.on('idle', () => {
-  console.log('done')
-  process.exit()
-})

@@ -13,15 +13,15 @@
     "human-interval": "^0.1.6",
     "limiter": "^1.1.2",
     "lodash": "^4.17.4",
+    "make-promises-safe": "^1.1.0",
     "mocha": "^3.2.0",
     "npm-user": "^3.0.1",
     "owners": "1.342.0",
-    "standard": "^10.0.3",
-    "standard-markdown": "^2.3.0"
+    "standard": "^10.0.3"
   },
   "scripts": {
     "build": "node script/build.js",
-    "test": "mocha && standard --fix && standard-markdown",
+    "test": "mocha && standard --fix",
     "release": "script/release.sh"
   },
   "dependencies": {
