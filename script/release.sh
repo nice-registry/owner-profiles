@@ -13,6 +13,7 @@ project=$(basename $repo)
 git clone "https://github.com/nice-registry/owner-profiles" module
 cd module
 npm install
+npm install owners --save-dev
 npm run build
 npm test
 [[ `git status --porcelain` ]] || exit
