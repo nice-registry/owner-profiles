@@ -36,7 +36,7 @@ describe('ownerProfiles', () => {
         count++
       })
       .on('end', () => {
-        expect(count).to.be.above(5200)
+        expect(count).to.be.above(120 * 1000)
         done()
       })
   })
