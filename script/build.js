@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 require('make-promises-safe')
+require('dotenv-safe').load()
 
 const npmUser = require('npm-user')
 const usernames = require('owners').map(o => o.username)
@@ -12,8 +13,8 @@ const limiter = new Bottleneck({
 })
 
 const jobStartTime = Date.now()
-const jobDuration = humanInterval('50 minutes')
-const TTL = humanInterval('80 days')
+const jobDuration = humanInterval(process.env.JOB_DURATION)
+const TTL = humanInterval(process.env.PROFILE_TTL)
 
 const freshProfiles = []
 

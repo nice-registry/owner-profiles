@@ -10,6 +10,7 @@
     "bottleneck": "^2.0.1",
     "chai": "^3.5.0",
     "clean-deep": "^2.0.1",
+    "dotenv-safe": "^5.0.1",
     "human-interval": "^0.1.6",
     "limiter": "^1.1.2",
     "lodash": "^4.17.4",
