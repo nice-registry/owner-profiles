@@ -5,11 +5,6 @@ set -o errexit    # always exit on error
 set -o pipefail   # honor exit codes when piping
 set -o nounset    # fail on unset variables
 
-repo=$npm_package_repository_url
-repo="${repo/git+/}"
-repo="${repo/.git/}"
-project=$(basename $repo)
-
 git clone "https://github.com/nice-registry/owner-profiles" module
 cd module
 npm install
