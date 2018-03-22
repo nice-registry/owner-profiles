@@ -29,7 +29,8 @@ describe('ownerProfiles', () => {
     expect(owner.name).to.be.a('string')
   })
 
-  it('has lots of entries', (done) => {
+  it('has lots of entries', function (done) {
+    this.timeout(10 * 1000)
     let count = 0
     profiles.createReadStream()
       .on('data', (data) => {
