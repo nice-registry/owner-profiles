@@ -16,7 +16,7 @@
     "lodash": "^4.17.4",
     "make-promises-safe": "^1.1.0",
     "mocha": "^3.2.0",
-    "npm-user": "^3.0.1",
+    "npm-user": "github:zeke/npm-user#new-npm-website",
     "owners": "^1.359.0",
     "standard": "^10.0.3"
   },
