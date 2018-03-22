@@ -10,6 +10,7 @@ cd module
 npm install
 npm install owners --save-dev
 npm run build
+npm run tally
 npm test
 [[ `git status --porcelain` ]] || exit
 git add .

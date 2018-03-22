@@ -21,6 +21,7 @@
     "standard": "^10.0.3"
   },
   "scripts": {
+    "tally": "node script/tally.js",
     "build": "node script/build.js",
     "test": "mocha && standard --fix",
     "release": "script/release.sh"
