@@ -9,7 +9,7 @@ const db = require('../lib/db')
 const Bottleneck = require('bottleneck')
 const humanInterval = require('human-interval')
 const limiter = new Bottleneck({
-  maxConcurrent: 5
+  maxConcurrent: 3
 })
 
 const jobStartTime = Date.now()
