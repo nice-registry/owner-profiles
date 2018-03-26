@@ -17,7 +17,7 @@
     "make-promises-safe": "^1.1.0",
     "mocha": "^3.2.0",
     "npm-user": "github:zeke/npm-user#new-npm-website",
-    "owners": "^1.365.0",
+    "owners": "^1.366.0",
     "standard": "^10.0.3"
   },
   "scripts": {
@@ -30,10 +30,10 @@
     "level": "2.1.2"
   },
   "tally": {
-    "total": 169385,
-    "email": 168526,
-    "name": 63191,
-    "github": 10413,
-    "twitter": 6128
+    "total": 169387,
+    "email": 168528,
+    "name": 63192,
+    "github": 10421,
+    "twitter": 6131
   }
 }
