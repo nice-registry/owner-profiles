@@ -1,6 +1,6 @@
 {
   "name": "owner-profiles",
-  "version": "2.3192.0",
+  "version": "2.3193.0",
   "description": "Profile data for every npm author: name, email, GitHub handle, etc.",
   "main": "index.js",
   "repository": "https://github.com/nice-registry/owner-profiles",
